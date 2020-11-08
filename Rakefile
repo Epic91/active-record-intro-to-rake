@@ -1,3 +1,5 @@
+require 'pry'
+
 task :environment do
   require_relative './config/environment'
 end
@@ -26,4 +28,7 @@ namespace :db do
   end
 end
 
-
+desc 'drop into the Pry console'
+task console: :environment do
+  Pry.start
+end
